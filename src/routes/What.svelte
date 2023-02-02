@@ -1,4 +1,10 @@
-<div class="container grid grid-cols-12 gap-12">
+<script>
+
+	// @ts-ignore
+	import Button from "$lib/Button.svelte";
+
+</script>
+<div class="container grid grid-cols-12 gap-12 my-5">
   <div class="col-span-8">
     <h3>What we do?</h3>
     <p>
@@ -7,7 +13,7 @@
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente nihil quia nemo magnam esse neque molestiae iste magni voluptatibus autem delectus obcaecati officiis consequatur nulla velit harum, soluta dignissimos illo.
     </p>
-    <button>Call In Action</button>
+    <Button id="action">Call to Action >></Button>
   </div>
   <div class="col-span-4">
     <h3>Contact Us</h3>

@@ -1,0 +1,12 @@
+:root {
+  --primary-color: rgb(251 191 36);
+}
+
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}

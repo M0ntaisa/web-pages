@@ -1,33 +1,16 @@
 <script>
-	import { onMount } from "svelte";
+
 	import Hero from "./Hero.svelte";
 	import What from "./What.svelte";
+	import Posts from "./Posts.svelte";
 
-	/**
-	 * @type {any[]}
-	 */
-	let posts = []
-	onMount(async() => {
-		posts = await getPosts();
-	})
+	export let data;
 
-	const getPosts = async() => {
-		const res = await fetch("https://jsonplaceholder.typicode.com/photos");
-		const data = await res.json();
-		const filteredData = data.slice(0, 5);
-		return filteredData;
-	}
+	const { posts } = data;
 
 </script>
 
 <Hero />
 <What />
+<Posts {posts} />
 
-<div class="container grid grid-cols-3 gap-3 my-5">
-	{#each posts as { title, url} }
-		<div class="p-2">
-			<img src={url} alt={title} />
-			<p>{title}</p>
-		</div>
-	{/each}
-</div>

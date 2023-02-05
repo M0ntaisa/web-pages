@@ -7,7 +7,7 @@
 
 <div class="container grid grid-cols-3 gap-3 my-5">
 	{#each posts as { title, url} }
-		<div class="p-2">
+		<div class="p-2 w-3/4">
 			<img src={url} alt={title} />
 			<p>{title}</p>
 		</div>

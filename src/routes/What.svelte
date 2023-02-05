@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
 
 	// @ts-ignore
 	import Button from "$lib/Button.svelte";

@@ -1,6 +1,5 @@
 <script>
 
-	import Hero from "./Hero.svelte";
 	import What from "./What.svelte";
 	import Posts from "./Posts.svelte";
 
@@ -10,7 +9,6 @@
 
 </script>
 
-<Hero />
 <What />
 <Posts {posts} />
 

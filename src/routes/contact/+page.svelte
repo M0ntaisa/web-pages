@@ -10,7 +10,7 @@
 </script>
 <div class="container">
   <h2>Contact Us</h2>
-  <p>{form?.message || ""}</p>
+  <p>{form?.status || ""}</p>
   <form method="POST">
     <div class="form-group">
       <label for="name" class="col-md-3 control-label">Name</label>
@@ -21,6 +21,7 @@
           type="text"
           placeholder="Your name"
           class="form-control" 
+          value="{form?.name || ""}"
         />
       </div>
       <label for="email" class="col-md-3 control-label">Email</label>
@@ -31,6 +32,7 @@
           type="text"
           placeholder="Your email"
           class="form-control" 
+          value="{form?.email || ""}"
         />
       </div>
       <label for="message" class="col-md-3 control-label">Your Message</label>
@@ -41,6 +43,7 @@
           type="text"
           placeholder="Your message"
           class="form-control" 
+          value="{form?.message || ""}"
         />
       </div>
     </div>

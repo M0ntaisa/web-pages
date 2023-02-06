@@ -30,11 +30,12 @@ export const actions = {
 
       if (missingField.length) {
         return fail(400, {
-          status: `${missingField.join(", ")}`,
+          message: `${missingField.join(", ")}`,
         })
       } else {
         return {
-          status: "Form is submitted",
+          success: true,
+          message: "Form is submitted",
         };
       }
     } 

@@ -1,4 +1,6 @@
 <script>
+	import { enhance } from "$app/forms";
+
 // @ts-nocheck
 
 	import Button from "$lib/Button.svelte";
@@ -11,7 +13,7 @@
 <div class="container">
   <h2>Contact Us</h2>
   <p>{form?.status || ""}</p>
-  <form method="POST">
+  <form method="POST" use:enhance>
     <div class="form-group">
       <label for="name" class="col-md-3 control-label">Name</label>
       <div class="col-md-9">

@@ -3,10 +3,15 @@
 
 	import Button from "$lib/Button.svelte";
 
+  export let form;
+
+  $: console.log(form);
+
 </script>
 <div class="container">
   <h2>Contact Us</h2>
-  <form>
+  <p>{form?.message || ""}</p>
+  <form method="POST">
     <div class="form-group">
       <label for="name" class="col-md-3 control-label">Name</label>
       <div class="col-md-9">

@@ -1,11 +1,16 @@
 <script>
+// @ts-nocheck
+
 	import { enhance } from "$app/forms";
 
 // @ts-nocheck
 
 	import Button from "$lib/Button.svelte";
 
-  export let form;
+  /**
+	 * @type {{ success: any; message: any; }}
+	 */
+   export let form;
 
   $: console.log(form);
 

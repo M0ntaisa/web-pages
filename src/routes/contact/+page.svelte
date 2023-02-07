@@ -11,7 +11,7 @@
 
 </script>
 <div class="container py-8">
-  <h2>Contact Us</h2>
+  <h2 class="font-bold text-4xl">Contact Us</h2>
   {#if form?.success}
     <p class="success">{form?.message || ""}</p>
   {:else}
@@ -59,10 +59,6 @@
 </div>
 
 <style>
-  h2 {
-    font-weight: 500;
-    font-size: 2em;
-  }
   input, textarea {
     width: 100%;
     padding: 0.5em 1em;

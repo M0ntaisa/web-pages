@@ -10,7 +10,7 @@
   $: console.log(form);
 
 </script>
-<div class="container">
+<div class="container py-8">
   <h2>Contact Us</h2>
   {#if form?.success}
     <p class="success">{form?.message || ""}</p>
@@ -59,9 +59,6 @@
 </div>
 
 <style>
-  .container {
-    padding: 2em 0;
-  }
   h2 {
     font-weight: 500;
     font-size: 2em;

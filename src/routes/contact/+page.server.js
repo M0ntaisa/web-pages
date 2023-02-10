@@ -25,9 +25,16 @@ export const actions = {
       }
     } catch (error) {
       console.log(error);
-      return error.inner.reduce((acc, err) => {
+      const errors = error.inner.reduce((acc, err) => {
         return { ...acc, [err.path]: err.message };
       }, {});
+
+      return {
+        errors,
+        name,
+        email,
+        message
+      }
     }
 
 

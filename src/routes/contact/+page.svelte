@@ -31,6 +31,8 @@
             type="text"
             placeholder="Your name"
             class="form-control" 
+            value={form?.name || ""}
+            class:error={form && !form?.name}
           />
         </div>
         <label for="email" class="col-md-3 control-label">Email</label>
@@ -41,6 +43,8 @@
             type="text"
             placeholder="Your email"
             class="form-control" 
+            value={form?.email || ""}
+            class:error={form && !form?.email}
           />
         </div>
         <label for="message" class="col-md-3 control-label">Your Message</label>
@@ -50,7 +54,9 @@
             name="message"
             placeholder="PLease enter your message here..."
             rows="5"
-            class="form-control" 
+            class="form-control"
+            value={form?.message || ""}
+            class:error={form && !form?.message} 
           />
         </div>
       </div>
@@ -82,7 +88,6 @@
     background-color: lightgreen;
   }
   .error {
-    padding: 1em;
-    background-color: lightcoral;
+    border: 1px solid lightcoral;
   }
 </style>

@@ -17,7 +17,7 @@ export const actions = {
     // do think with data
 
     try {
-      const result = await contactFormSchema.validate({ name, email, message });
+      const result = await contactFormSchema.validate({ name, email, message }, { abortEarly: false });
       console.log(result);
       return {
         success: true,
@@ -25,6 +25,9 @@ export const actions = {
       }
     } catch (error) {
       console.log(error);
+      return error.inner.reduce((acc, err) => {
+        return { ...acc, [err.path]: err.message };
+      }, {});
     }
 
 

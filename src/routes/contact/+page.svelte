@@ -1,7 +1,7 @@
 <script>
 // @ts-nocheck
 
-	import { enhance } from "$app/forms";
+	import { enhance, applyAction } from "$app/forms";
 
 // @ts-nocheck
 
@@ -21,7 +21,11 @@
     <p class="success">{form?.status || ""}</p>
   {:else}
     <p>{form?.message || ""}</p>
-    <form method="POST">
+    <form method="POST" use:enhance={() => {
+      return async({ result }) => {
+        await applyAction(result);
+      }
+    }}>
       <div class="form-group">
         <label for="name" class="col-md-3 control-label">Name</label>
         <div class="col-md-9">

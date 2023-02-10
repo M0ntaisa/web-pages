@@ -18,10 +18,10 @@
 <div class="container py-8">
   <h2 class="font-bold text-4xl">Contact Us</h2>
   {#if form?.success}
-    <p class="success">{form?.message || ""}</p>
+    <p class="success">{form?.status || ""}</p>
   {:else}
     <p>{form?.message || ""}</p>
-    <form method="POST" use:enhance>
+    <form method="POST">
       <div class="form-group">
         <label for="name" class="col-md-3 control-label">Name</label>
         <div class="col-md-9">
@@ -32,8 +32,11 @@
             placeholder="Your name"
             class="form-control" 
             value={form?.name || ""}
-            class:error={form && !form?.name}
+            class:error={form?.errors?.name}
           />
+          {#if form?.errors?.name}
+            <p class="red">{form?.errors?.name}</p>
+          {/if}
         </div>
         <label for="email" class="col-md-3 control-label">Email</label>
         <div class="col-md-9">
@@ -44,8 +47,11 @@
             placeholder="Your email"
             class="form-control" 
             value={form?.email || ""}
-            class:error={form && !form?.email}
+            class:error={form?.errors?.email}
           />
+          {#if form?.errors?.email}
+            <p class="red">{form?.errors?.email}</p>
+          {/if}
         </div>
         <label for="message" class="col-md-3 control-label">Your Message</label>
         <div class="col-md-9">
@@ -56,8 +62,11 @@
             rows="5"
             class="form-control"
             value={form?.message || ""}
-            class:error={form && !form?.message} 
+            class:error={form?.errors?.message}
           />
+          {#if form?.errors?.message}
+            <p class="red">{form?.errors?.message}</p>
+          {/if}
         </div>
       </div>
       <div class="form-group">
@@ -89,5 +98,9 @@
   }
   .error {
     border: 1px solid lightcoral;
+  }
+  .red {
+    color: lightcoral;
+    font-style: italic;
   }
 </style>

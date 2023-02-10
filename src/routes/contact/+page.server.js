@@ -8,13 +8,13 @@ export const actions = {
     const email = formData.get("email");
     const message = formData.get("message");
 
+    // do think with data
+
     const contactFormSchema = object({
-      name: string().required(),
+      name: string().min(2, "Name is at least 2 chars").required("Annonymous user didn't acceptable"),
       email: string().required().email(),
       message: string().required()
     });
-
-    // do think with data
 
     try {
       const result = await contactFormSchema.validate({ name, email, message }, { abortEarly: false });

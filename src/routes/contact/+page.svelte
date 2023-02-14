@@ -6,6 +6,7 @@
 // @ts-nocheck
 
 	import Button from "$lib/Button.svelte";
+	import Seo from "$lib/Seo.svelte";
 
   /**
 	 * @type {{ success: any; message: any; }}
@@ -81,6 +82,8 @@
     </form>
   {/if}
 </div>
+
+<Seo title="Contact Us | M0nochrome .inc" description="Contact M0no desc" type="Website" />
 
 <style>
   input, textarea {

@@ -12,4 +12,4 @@
 
 <What />
 <Posts {posts} />
-<Seo title="sample title" description="sample desc" type="Website" />
+<Seo title="M0nochrome .inc" description="M0no desc" type="Website" />

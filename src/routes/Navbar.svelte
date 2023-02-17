@@ -19,6 +19,10 @@
       title: "Contact",
       href: "/contact"
     },
+    {
+      title: "Blog",
+      href: "/blog"
+    },
   ];
 
   $: routeId = $page.route.id;

@@ -5,6 +5,8 @@
 
 </script>
 
-<Navbar />
-<slot />
-<Footer />
+<div class="app flex flex-col min-h-screen">
+  <Navbar />
+  <slot />
+  <Footer />
+</div>

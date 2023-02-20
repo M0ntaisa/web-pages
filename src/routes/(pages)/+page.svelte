@@ -1,7 +1,7 @@
 <script>
 
-	import What from "./What.svelte";
-	import Posts from "./Posts.svelte";
+	import What from "$lib/What.svelte";
+	import Posts from "$lib/Posts.svelte";
 	import Seo from "$lib/Seo.svelte";
 
 	export let data;

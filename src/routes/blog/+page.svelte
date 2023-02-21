@@ -1,4 +1,7 @@
 <script>
+	import Seo from "$lib/Seo.svelte";
+
+
   export let data;
   const {posts} = data;
 </script>
@@ -13,6 +16,8 @@
     {/each}
   </ul>
 </div>
+
+<Seo title="Blog | M0nochrome .inc" description="Blog M0no desc" type="Webpage" />
 
 <style>
   a:hover {

@@ -1,12 +1,27 @@
 :root {
   --primary-color: rgb(251 191 36);
+  --bg-color: white;
+  --color: #333;
+}
+
+[data-theme="dark"] {
+  --primary-color: #2b3f63;
+  --bg-color: #000;
+  --color: #ddd;
 }
 
 body {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
+  background-color: var(--bg-color);
+  color: var(--color);
 }
+
 .container {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+input, textarea {
+  background-color: transparent;
 }

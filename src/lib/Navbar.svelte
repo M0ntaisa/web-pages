@@ -34,11 +34,8 @@
     const userPreferDarkMode = window.matchMedia("(prefers-color-scheme: dark)"
     ).matches;
 
-    if (userPreferDarkMode) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
+    setTheme(userPreferDarkMode ? "dark" : "light");
+
   })
 
   const setTheme = (theme) => {

@@ -1,6 +1,8 @@
 <script>
   import "../app.css";
   import { page } from "$app/stores";
+	import Moon from "./icons/moon.svelte";
+	import Sun from "./icons/sun.svelte";
 
   const navs = [
     {
@@ -25,9 +27,12 @@
     },
   ];
 
+  let currentTheme = "";
+
   const setTheme = (theme) => {
     document.documentElement.dataset.theme = theme;
-    document.cookie = `siteTheme=${theme};max-age=31536000;path="/"`
+    document.cookie = `siteTheme=${theme};max-age=31536000;path="/"`;
+    currentTheme = theme;
   }
 
   $: routeId = $page.route.id;
@@ -43,11 +48,16 @@
         <a {href} class:active={href === "/" ? routeId === href : url.includes(href)}>{title}</a>
       </li>
       {/each}
-      <li>
-        <a href={"#"} on:click={() => setTheme("dark")}>Dark</a>
-      </li>
-      <li>
-        <a href={"#"} on:click={() => setTheme("light")}>Light</a>
+      <li class="flex items-center">
+        {#if currentTheme == "light"}
+          <a class="moon" href={"#"} on:click={() => setTheme("dark")}>
+            <Moon />
+          </a>
+        {:else}
+          <a class="sun" href={"#"} on:click={() => setTheme("light")}>
+            <Sun />
+          </a>
+        {/if}
       </li>
     </ul>
   </div>

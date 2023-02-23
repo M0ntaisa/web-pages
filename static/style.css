@@ -1,13 +1,14 @@
 :root {
   --primary-color: rgb(251 191 36);
   --bg-color: white;
+  --hero-bgc: #b5c4e1;
   --color: #333;
 }
 
 [data-theme="dark"] {
   --primary-color: rgb(251 191 36);
-  /* --primary-color: #2b3f63; */
   --bg-color: #000;
+  --hero-bgc: #2b3f63;
   --color: #ddd;
 }
 

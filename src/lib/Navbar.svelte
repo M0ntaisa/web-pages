@@ -1,6 +1,7 @@
 <script>
   import "../app.css";
   import { page } from "$app/stores";
+  import { onMount } from "svelte";
 	import Moon from "./icons/moon.svelte";
 	import Sun from "./icons/sun.svelte";
 
@@ -28,6 +29,17 @@
   ];
 
   let currentTheme = "";
+
+  onMount(() => {
+    const userPreferDarkMode = window.matchMedia("(prefers-color-scheme: dark)"
+    ).matches;
+
+    if (userPreferDarkMode) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  })
 
   const setTheme = (theme) => {
     document.documentElement.dataset.theme = theme;

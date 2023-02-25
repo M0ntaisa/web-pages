@@ -1,12 +1,13 @@
-// import { redirect } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit';
 
 /** @type {import('@sveltejs/kit').Handle} */
 export const handle = async({ event, resolve }) => {
-  
+  const access = event.cookies.get("access") === "true";
+
   // console.log(event.route.id?.startsWith("/(app)"))
-  // if (event.route.id?.startsWith("/(app)")) {
-  //   throw redirect(302, "/login");
-  // }
+  if (!access && event.route.id?.startsWith("/(app)")) {
+    throw redirect(302, "/login");
+  }
   
   const theme = event.cookies.get("siteTheme");
   

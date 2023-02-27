@@ -26,6 +26,14 @@
       title: "Blog",
       href: "/blog"
     },
+    {
+      title: "Dashboard",
+      href: "/dashboard"
+    },
+    {
+      title: "Profile",
+      href: "/profile"
+    },
   ];
 
   let currentTheme = "";

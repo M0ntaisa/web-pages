@@ -2,6 +2,7 @@
   --primary-color: rgb(251 191 36);
   --bg-color: white;
   --hero-bgc: #b5c4e1;
+  --form-color: rgb(243 244 246);
   --color: #333;
 }
 
@@ -9,6 +10,7 @@
   --primary-color: rgb(251 191 36);
   --bg-color: #000;
   --hero-bgc: #2b3f63;
+  --form-color: rgb(17 24 39);
   --color: #ddd;
 }
 
@@ -17,6 +19,11 @@ body {
   font-family: 'Courier New', Courier, monospace;
   background-color: var(--bg-color);
   color: var(--color);
+}
+
+.form {
+  background-color: var(--form-color);
+  /* color: var(--color); */
 }
 
 .container {

@@ -12,5 +12,9 @@ export const actions = {
       throw redirect(302, "/dashboard");
     } 
 
+    return {
+      username,
+      message: "username or password is not valid",
+    };
   },
 };

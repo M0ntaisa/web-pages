@@ -3,7 +3,6 @@
 	import Button from "$lib/Button.svelte";
 
   export let form;
-  console.log(form);
 
 </script>
 
@@ -12,7 +11,7 @@
     <form class="bg-gray-100 rounded-lg px-8 pt-6 pb-8 mb-4" method="POST">
       <h2 class="text-center text-3xl text-gray-800 mb-8 font-bold">Login</h2>
       {#if form?.message}
-      <p>{form.message}</p>
+      <p class="red">{form.message}</p>
       {/if}
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="username">
@@ -33,3 +32,13 @@
   </div>
     
 </div>
+
+<style>
+  .red {
+    background-color: lightcoral;
+    color: white;
+    font-style: italic;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+</style>
